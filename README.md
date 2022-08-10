@@ -5,4 +5,4 @@ yarn create next-app --example https://github.com/lightsound/Next.js-TypeScript-
 ```
 
 ## Image
-<img width="500" alt="Screen Shot 2022-08-10 at 14 35 17" src="https://user-images.githubusercontent.com/92189386/183823450-f776d6d6-3cf6-4a4e-b29e-abe55b54ad38.png">
+![Videotogif](https://user-images.githubusercontent.com/92189386/183893370-717a9257-0144-49d5-a443-18529b1db242.gif)
