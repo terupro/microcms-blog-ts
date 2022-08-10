@@ -1,13 +1,15 @@
-import { MicroCMSListResponse } from "microcms-js-sdk";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { MicroCMSImage, MicroCMSListResponse } from "microcms-js-sdk";
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { ComponentProps, FormEventHandler, useState } from "react";
 import { client } from "src/libs/client";
+import dayjs from "dayjs";
 
 // propsの型を定義
 export type Blog = {
   title: string;
   body: string;
+  thumbnail: MicroCMSImage;
 };
 type Props = MicroCMSListResponse<Blog>;
 
@@ -44,8 +46,8 @@ const Home: NextPage<Props> = (props) => {
   const contents = search ? search.contents : props.contents;
   const totalCount = search ? search.totalCount : props.totalCount;
   return (
-    <div>
-      <form className="flex gap-x-2" onSubmit={handleSubmit}>
+    <div className="text-center">
+      <form className="flex justify-center gap-2" onSubmit={handleSubmit}>
         <input type="text" name="query" className="border border-black px-2" />
         <button className="border border-black px-2">検索</button>
         <button
@@ -62,13 +64,20 @@ const Home: NextPage<Props> = (props) => {
       <ul className="mt-4 space-y-4">
         {contents.map((content) => {
           return (
-            <li key={content.id}>
+            <div
+              key={content.id}
+              className="block max-w-3xl  cursor-pointer rounded-lg border border-gray-200 bg-white p-6 shadow-md hover:bg-gray-100"
+            >
               <Link href={`/blog/${content.id}`}>
-                <a className="text-xl underline hover:opacity-50">
-                  {content.title}
-                </a>
+                <div>
+                  <img src={content.thumbnail.url} alt="画像" />
+                  <time dateTime={content.publishedAt} className="mt-2 block">
+                    {dayjs(content.publishedAt).format("YYYY年MM月DD日")}
+                  </time>
+                  <a className="text-xl  hover:opacity-50 ">{content.title}</a>
+                </div>
               </Link>
-            </li>
+            </div>
           );
         })}
       </ul>
