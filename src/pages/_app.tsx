@@ -5,11 +5,11 @@ import Link from "next/link";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="mx-auto my-8 max-w-prose">
-      <div className="mx-6">
+      <div className="mx-4">
         <header className="border-b border-green-300 pb-8">
           <h1 className="text-center">
             <Link href="/">
-              <a className=" text-5xl font-bold">TERUBLOG</a>
+              <a className="text-4xl font-bold sm:text-5xl">TERUBLOG</a>
             </Link>
           </h1>
         </header>

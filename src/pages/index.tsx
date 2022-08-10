@@ -47,9 +47,12 @@ const Home: NextPage<Props> = (props) => {
   const totalCount = search ? search.totalCount : props.totalCount;
   return (
     <div className="text-center">
-      <form className="flex justify-center gap-2" onSubmit={handleSubmit}>
+      <form
+        className="flex justify-center gap-2 text-sm sm:text-xl"
+        onSubmit={handleSubmit}
+      >
         <input type="text" name="query" className="border border-black px-2" />
-        <button className="border border-black px-2">検索</button>
+        <button className="border border-black px-2 ">検索</button>
         <button
           onClick={handleClick}
           type="reset"

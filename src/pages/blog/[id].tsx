@@ -36,7 +36,7 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate;
 const BlogId: NextPage<Props> = (props) => {
   return (
     <div>
-      <h1 className="text-4xl font-bold">{props.title}</h1>
+      <h1 className="text-2xl font-bold  sm:text-3xl ">{props.title}</h1>
       <time dateTime={props.publishedAt} className="mt-4 block">
         {`投稿日: ${dayjs(props.publishedAt).format("YYYY年MM月DD日")}`}
       </time>
