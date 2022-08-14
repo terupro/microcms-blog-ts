@@ -10,8 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>TERUBLOG</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="mx-4">
-        <header className="border-b border-green-300 pb-8">
+
+      <div className="back mx-4">
+        <header className="border-b border-black pb-8">
           <h1 className="text-center">
             <Link href="/">
               <a className="text-4xl font-bold sm:text-5xl">TERUBLOG</a>
