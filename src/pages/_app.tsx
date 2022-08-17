@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className="back mx-4">
-        <header className="border-b border-black pb-8">
+        <header className="border-black underline-offset-1">
           <h1 className="text-center">
             <Link href="/">
               <a className="text-4xl font-bold sm:text-5xl">TERUBLOG</a>

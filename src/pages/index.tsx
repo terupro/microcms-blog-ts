@@ -48,15 +48,21 @@ const Home: NextPage<Props> = (props) => {
   return (
     <div className="text-center">
       <form
-        className="flex justify-center gap-2 text-sm sm:text-xl"
+        className="flex justify-center gap-2  text-sm sm:text-xl"
         onSubmit={handleSubmit}
       >
-        <input type="text" name="query" className="border border-black px-2" />
-        <button className="border border-black px-2 ">検索</button>
+        <input
+          type="text"
+          name="query"
+          className="rounded-lg border border-black px-2"
+        />
+        <button className="rounded-lg border border-black bg-gray-200 px-2">
+          検索
+        </button>
         <button
           onClick={handleClick}
           type="reset"
-          className="border border-black px-2"
+          className="rounded-lg border border-black bg-gray-200 px-2"
         >
           リセット
         </button>
